@@ -27,11 +27,7 @@ public class AccountService {
     }
 
     public Optional<Account> getAccountById(int id) {
-        Optional<Account> wantedAccount = accountStorage.getAccountById(id);
-        if (wantedAccount.isPresent()) {
-            throw new IllegalArgumentException("Payment cannot be null or empty.");
-        }
-        return wantedAccount;
+        return accountStorage.getAccountById(id);
     }
 
     public Optional<Account> transferOrder(int id, double deposit) {
